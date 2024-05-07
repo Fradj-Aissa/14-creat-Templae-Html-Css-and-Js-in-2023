@@ -1,0 +1,900 @@
+/* start General variables and General code */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300;1,400;1,700&display=swap');
+*{
+    font-family: 'Passion One', cursive;
+}
+:root {
+    --mainColor: #781FF9;
+    --secondColor: #0B093B;
+    --blackAndWhite: #e8e8e8a1;
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Segoe UI Emoji";
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+.but{
+    border-radius: 15px;
+    background-color: white;
+    color: #000;
+    padding: 5px 20px;
+    transition: .5s;
+    font-size: 14px;
+}
+
+.but:hover{
+    color: #FFF;
+    background-color: var(--mainColor);
+}
+
+.headText p{
+    color: rgb(71, 71, 71);
+}
+/* end General variables and General code */
+/* Start Grid System */
+@media (min-width: 576px){ /* small devices => landscape Phones */ 
+    .container{
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){ /* medium devices => Tablets */ 
+    .container{
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px){ /* desktops */ 
+    .container{
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px){ /* large Screens */ 
+    .container{
+        max-width: 1050px;
+    }
+}
+/* End Grid System */
+
+/* Start style header */
+header{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+}
+
+header .head, .head ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .head ul li{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+header nav li a {
+    padding: 10px;
+    color: #000;
+    transition: .5s;
+    border: 2px solid transparent;
+}
+
+header nav li a:hover {
+    border-color: transparent transparent var(--secondColor) transparent;
+}
+header div a{
+    color: #000;
+}
+
+header .togle{
+    display: none;
+}
+
+@media (max-width: 992px){ 
+    .head nav, .head div{
+        display: none;
+    }
+    header .show{
+        width: 300px;
+        justify-content: center;
+        color: #FFF;
+    }
+
+    header .togle{
+        display: block;
+    }
+
+    header .show {
+        position: relative;
+        display: block;
+    }
+
+    header .show ul {
+        position: absolute;
+        top: 100px;
+        display: block;
+        font-size: 30px; 
+    }
+
+    header .show ul li{
+        margin: 30px 0;
+    }
+
+    header .show ul li a{
+        color: #fff;
+    }
+    header .but{
+        font-size: 20px;
+        color: #000 !important;
+    }
+}
+
+/* End style header */ 
+/* start style landing */ 
+
+.landing {
+    height: 92vh;
+}
+
+.landing::after {
+    content: "";
+    height: 550px;
+    width: 25%;
+    background-color: var(--blackAndWhite);
+    position: absolute;
+    top: 0px;
+    right: 0;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+
+    .landing::after {
+        display: none;
+    }
+
+}
+
+.landing .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landing .text{
+    flex-basis: 50%;
+}
+
+.landing .text h1{
+    color: var(--secondColor);
+    font-size: 50px;
+}
+
+.landing .text p{
+    color: rgb(41, 41, 41);
+    line-height: 28px;
+}
+
+.landing .text div a{
+    background-color: var(--mainColor);
+    color: #fff;
+    margin-top: 25px;
+    display: block;
+    width: 150px;
+    height: 45px;
+    padding-top: 13px;
+    border-radius: 20px;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.landing .text div a:hover {
+    box-shadow: 1px 1px 10px var(--mainColor);
+}
+
+.landing .image {
+    flex-basis: 50%;
+    display: block;
+}
+
+.landing .image div{
+    width: 220px;
+    background-color: var(--secondColor);
+    border-radius: 15px;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    top: 350px;
+    left: 90px;
+    font-size: 14px;
+}
+
+.landing .image div span {
+    color: rgba(185, 182, 0, 0.719);  
+}
+
+.landing .image img {
+    width: 300px;
+    border-radius: 15px;
+    margin-left: calc(100% - 300px);
+}
+
+@media (max-width: 768px){
+    
+    .landing {
+        height: 50vh;
+    }
+
+    .landing .image {
+        display: none;
+    }
+
+    .landing .content {
+        display: block;
+        text-align: center;
+    }
+
+    .landing .text div a {
+        transform: translate(-50%);
+        position: relative;
+        left: 50%;
+    }
+
+}
+
+/* End Style landing */ 
+/* Start Style SpaseLogo */
+
+.spaseLogo{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--blackAndWhite);
+}
+.spaseLogo div div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.spaseLogo div svg path{ 
+    fill: #000;
+}
+
+.spaseLogo div svg {
+    width: 155px;
+    height: auto;
+}
+
+@media (max-width: 576px){
+    .spaseLogo div svg {
+        width: 120px;
+        height: auto;
+    }
+}
+
+/* End style spaseLogo */
+/* Start Style  Services */
+
+.Services{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Services .content{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+
+.Services .content .card {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.Services .content .card img{
+    width: 50px;
+}
+.Services .content .card h3{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px){ 
+    .Services .content .card {
+        text-align: center;
+    }
+}
+/* End Style  Services */
+/* Start Style  spaseContect */
+
+.spaseContect{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: var(--blackAndWhite);
+}
+
+.spaseContect .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spaseContect .content > div:first-child {
+    flex-basis: 50%;
+}
+
+.spaseContect .content > div:first-child p{
+    line-height: 25px;
+}
+
+.spaseContect .content > div:first-child div {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.spaseContect .content > div:first-child div a{
+    background-color:  var(--mainColor);
+    border-radius: 18px;
+    font-size: 15px;
+    padding: 13px 25px;
+    color: #FFF;
+    border: 2px solid  var(--mainColor);
+    transition: .5S;
+}
+
+.spaseContect .content > div:last-child a:last-child{
+    background-color: transparent;
+    color: #000;
+}
+
+.spaseContect .content > div:first-child div a:hover{
+    box-shadow: 1px 1px 10px var(--mainColor);
+}
+
+.spaseContect .content > div:last-child {
+    flex-basis: 50%;
+    position: relative;
+}
+
+.spaseContect .content > div:last-child img {
+   border-radius: 15px;
+   box-shadow: 5px 0px 20px #000000a4;
+}
+
+.spaseContect .content > div:last-child div:nth-child(1){
+    position: absolute;
+    top: -240px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(1) img{
+    width: 200px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(2){
+    position: absolute;
+    top: -220px;
+    left: 255px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(2) img{
+    width: 200px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(3){
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(3) img{
+    width:  150px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(4){
+    position: absolute;
+    top: -15px;
+    left: 255px;
+}
+
+.spaseContect .content > div:last-child div:nth-child(4) img{
+    width:  200px;
+}
+
+@media (max-width: 992px){
+    .spaseContect .content > div:last-child {
+        display: none;
+    }
+
+    .spaseContect .content > div:first-child {
+       flex-basis:100% ;
+       text-align: center;
+    }
+
+    .spaseContect .content > div:first-child div{
+        width: 60%;
+        transform: translate(-50%);
+        left: 50%;
+        position: relative;
+    }
+}
+
+/* End Style spaseContect */
+
+/* Start Style Project */
+
+.Project{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Project .container > div:first-child p{
+    color: #1e1e1e;
+    line-height: 30px;
+    margin-top: 20px;
+    width: 320px;
+}
+
+.Project .content{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(325px , 1fr));
+    grid-gap: 20px;
+}
+
+.Project .content .card{ 
+    flex-wrap: wrap;
+}
+
+.Project .content .card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.Project .content .card h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.Project .content .card p {
+    line-height: 30px;
+}
+
+.Project .container > div:last-child{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.Project .container > div:last-child a{
+    padding: 15px 25px;
+    background-color: var(--mainColor);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 15px;
+}
+
+/* End Style Project */
+
+/* Start Style SpaceTwo */
+
+.spaceTwo {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--blackAndWhite);
+}
+
+.spaceTwo .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(100px , 1fr));
+}
+
+.spaceTwo .content div:first-child {
+    position: relative;
+}
+
+.spaceTwo .content div:first-child img{
+    border-radius: 15px;
+    position: absolute;
+    top: -133px;
+    width: 350px;
+}
+
+.spaceTwo .content div:last-child p{
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.spaceTwo .content div:last-child div{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.spaceTwo .content div:last-child div a{
+    background-color:  var(--mainColor);
+    border-radius: 18px;
+    font-size: 15px;
+    padding: 13px 25px;
+    color: #FFF;
+    border: 2px solid  var(--mainColor);
+    transition: .5S;
+}
+
+.spaceTwo .content  div:last-child div a:last-child{
+    background-color: transparent;
+    color: #000;
+}
+
+.spaceTwo .content div:last-child div a:hover{
+    box-shadow: 1px 1px 10px var(--mainColor);
+}
+
+@media (max-width: 992px){
+    .spaceTwo {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .spaceTwo .content div:first-child {
+        display: none;
+    }
+
+    .spaceTwo .content {
+        text-align: center;
+    }
+    
+    .spaceTwo .content div:last-child div{
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+/* End Style SpaceTwo */
+
+/* start Style blog */
+.blog {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.blog .container > div:nth-child(1) {
+    width: 300px;
+}
+
+.blog .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px ,1fr));
+    grid-gap: 50px;
+    margin-top: 50px;
+}
+
+.blog .content .card{
+    padding: 25px 20px;
+    box-shadow: 1px 1px 15px #969595;
+    border-radius: 5px;
+    height: 270px;
+}
+
+.blog .content .card h2{
+    margin-top: 19px;
+}
+
+.blog .content .card p{
+    color: #5a5a5a;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 25px;
+}
+
+.blog .content .card button{
+    position: relative;
+    top: 20px;
+    padding: 8px 13px;
+    background-color: #4395ffde;
+    border-radius: 25px;
+    color: #FFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* End Style blog */
+
+/* Start Style Say */
+.Say {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--blackAndWhite);
+    line-height: 25px
+}
+
+.Say .container > div:first-child{
+    width: 320px;
+}
+
+.Say .content{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 40px;
+}
+
+.Say .content .card{
+    background-color: var(--secondColor);
+    color: #fff;
+    padding: 0px 25px 25px;
+    border-radius: 10px;
+}
+
+.Say .content .card::before{
+    content: ",,";
+    font-size: 80px;
+    position: relative;
+    top: -50px;
+    left: 47%;
+    text-align: center;
+    color: #ffee39; 
+    font-weight: bold;
+}
+
+.Say .content .card h6{
+    margin-top: 10px;
+    color: #ffee39; 
+    text-align: right;
+}
+
+/* End Style Say */
+
+/* Start Style Pricing */
+
+.Pricing {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Pricing .container > div:first-child{
+    width: 320px;
+}
+
+.Pricing .content{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 60px;
+}
+
+.Pricing .content .card{
+    padding: 0px 25px 25px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(53, 53, 53, 0.475);
+    padding: 15px;
+    color: #0B093B;
+}
+
+.Pricing .content .card .headCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.Pricing .content .card .headCard img{
+    width: 40px;
+}
+
+.Pricing .content .card .bodyCard{
+    line-height: 25px;
+}
+
+.Pricing .content .card .bodyCard h3{
+    margin-bottom: 10px;
+}
+
+.Pricing .content .card .bodyCard p{
+    margin-bottom: 10px;
+}
+
+.Pricing .content .card .bodyCard div h4 i{
+    padding-right: 20px;
+    padding-left: 20px;
+    color: rgb(58, 255, 58);
+}
+
+.Pricing .card:first-child .bodyCard h4:nth-child(3) i,
+.Pricing .card:first-child .bodyCard h4:nth-child(4) i,
+.Pricing .card:first-child .bodyCard h4:nth-child(5) i{
+    color: transparent;
+}
+
+.Pricing .card:nth-child(2) .bodyCard h4:last-child i{
+    color: transparent;
+}
+
+.Pricing .content .card .footCard {
+    margin: 20px;
+}
+
+.Pricing .content .card .footCard button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    outline: none;
+    border: none;
+    background-color: var(--mainColor);
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+/* End Style Pricing */
+/* start Style Contact */
+
+.Contact{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.Contact .container > div:first-child {
+    width: 300px;
+}
+
+.Contact .container > div:first-child p{
+    line-height: 25px;
+}
+
+.Contact .bodyMessage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.Contact .bodyMessage .message{
+   flex: 40%; 
+}
+
+.Contact .bodyMessage .message input,
+.Contact .bodyMessage .message textarea{
+    width: 100%;
+    border: 2px solid rgb(51, 51, 51);
+    border-color: transparent transparent rgb(51, 51, 51) transparent;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    cursor: text;
+}
+
+.Contact .bodyMessage .message input::before{
+    content: "ldfjg";
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: #ffee39;
+}
+
+.Contact .bodyMessage .message input:focus,
+.Contact .bodyMessage .message textarea:focus{
+    outline: none;
+}
+
+.Contact .bodyMessage .message textarea{
+    height: 150px;
+}
+
+.Contact .bodyMessage .message button{
+    padding: 10px 15px;
+    border-radius: 17px;
+    border: none;
+    outline: none;
+    background-color: var(--mainColor);
+    color: #FFF;
+    transform: .5s;
+    cursor: pointer;
+}
+
+.Contact .bodyMessage .message button:hover{
+    box-shadow:1px 1px 10px var(--mainColor);
+}
+
+.Contact .bodyMessage .classimg{
+    flex-basis: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 25px;
+}
+
+.Contact .bodyMessage .classimg img{
+    border-radius: 15px;
+}
+
+.Contact .bodyMessage .classimg div:last-child img{
+    width: 250px;
+}
+
+.Contact .bodyMessage .classimg div:first-child img{
+    width: 200px;
+}
+
+.Contact .bodyMessage .classimg div:first-child img:first-child{
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px){
+    .Contact .bodyMessage .message{
+        flex: 100%; 
+     }
+    .Contact .classimg {
+        flex-basis: 0%;
+    }
+    .Contact .classimg img{
+        display: none;
+    }
+}
+
+/* End Style Contact */
+/* start Style footer */
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: var(--secondColor);
+    color: #fff;
+}
+
+.footer div div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer div div a {
+    color: #fff;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.footer div div a:hover {
+    text-shadow:1px 1px 5px #ffF ;
+}
+
+@media (max-width: 768px){
+    .footer div div {
+        display: block;
+        text-align: center;
+    }
+    .footer div div p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* End Style footer */
